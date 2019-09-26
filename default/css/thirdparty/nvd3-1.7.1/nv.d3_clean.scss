@@ -1,0 +1,794 @@
+$black_000: #000000;
+$crimson_d62728: #d62728;
+$darkgray_aaa: #aaaaaa;
+$darkgrey_999: #999999;
+$darkslategrey_333: #333333;
+$dimgrey_666: #666666;
+$forestgreen_2ca02c: #2ca02c;
+$gainsboro_ddd: #dddddd;
+$gainsboro_e5e5e5: #e5e5e5;
+$lightgray_ccc: #cccccc;
+$salmon_f66: #ff6666;
+$silver_bababa: #bababa;
+$white_fff: #ffffff;
+$whitesmoke_EEE: #eeeeee;
+$whitesmoke_ebebeb: #ebebeb;
+$whitesmoke_eee: #eeeeee;
+
+svg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &.nvd3-svg {
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    display: block;
+            user-select: none;
+  }
+}
+
+.nvtooltip {
+  &.with-3d-shadow {
+       -moz-border-radius: 5px;
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  }
+  position: absolute;
+  background-color: white;
+  padding: 1px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  z-index: 10000;
+  font-family: Arial;
+  font-size: 13px;
+  text-align: left;
+  pointer-events: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+  &.with-transitions {
+       -moz-transition: opacity 50ms linear;
+       -moz-transition-delay: 200ms;
+    -webkit-transition: opacity 50ms linear;
+    -webkit-transition-delay: 200ms;
+            transition: opacity 50ms linear;
+              transition-delay: 200ms;
+  }
+
+  &.x-nvtooltip {
+    padding: 8px;
+  }
+
+  &.y-nvtooltip {
+    padding: 8px;
+  }
+
+  h3 {
+       -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    background-color: rgba(247, 247, 247, .75);
+    border-bottom: 1px solid $whitesmoke_ebebeb;
+            border-radius: 1px 5px 0 0;
+    font-weight: normal;
+    line-height: 18px;
+    margin: 0;
+    padding: 4px 14px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    padding: 5px 14px;
+    text-align: center;
+  }
+
+  span {
+    display: inline-block;
+    margin: 2px 0;
+  }
+
+  table {
+    margin: 6px;
+    border-spacing: 0;
+
+    td {
+      padding: 2px 9px 2px 0;
+      vertical-align: middle;
+
+      &.key {
+        font-weight: normal;
+      }
+
+      &.value {
+        font-weight: bold;
+        text-align: right;
+      }
+
+      &.legend-color-guide {
+        div {
+          height: 8px;
+          vertical-align: middle;
+          width: 8px;
+        }
+      }
+    }
+
+    tr {
+      &.highlight {
+        td {
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          padding: 1px 9px 1px 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 3px;
+    text-align: center;
+  }
+}
+
+.with-3d-shadow {
+  .nvtooltip {
+       -moz-border-radius: 5px;
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  }
+}
+
+.with-transitions {
+  .nvtooltip {
+       -moz-transition: opacity 50ms linear;
+       -moz-transition-delay: 200ms;
+    -webkit-transition: opacity 50ms linear;
+    -webkit-transition-delay: 200ms;
+            transition: opacity 50ms linear;
+              transition-delay: 200ms;
+  }
+
+  .nvd3 {
+    .nv-groups {
+      .nv-point {
+           -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+        -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+      }
+    }
+  }
+}
+
+.nvtooltip-pending-removal {
+  pointer-events: none;
+  position: absolute;
+}
+
+.nvd3 {
+  text {
+    font: normal 12px Arial;
+  }
+
+  .title {
+    font: bold 14px Arial;
+  }
+
+  .nv-background {
+    fill: white;
+    fill-opacity: 0;
+  }
+
+  &.nv-noData {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nv-legend {
+    .nv-series {
+      cursor: pointer;
+    }
+
+    .nv-disabled {
+      circle {
+        fill-opacity: 0;
+      }
+    }
+  }
+
+  .nv-axis {
+    pointer-events: none;
+
+    path {
+      fill: none;
+      stroke: $black_000;
+      stroke-opacity: .75;
+      shape-rendering: crispEdges;
+
+      &.domain {
+        stroke-opacity: .75;
+      }
+    }
+
+    &.nv-x {
+      path {
+        &.domain {
+          stroke-opacity: 0;
+        }
+      }
+    }
+
+    line {
+      fill: none;
+      stroke: $gainsboro_e5e5e5;
+      shape-rendering: crispEdges;
+
+      &.zero {
+        stroke-opacity: .75;
+      }
+    }
+
+    .zero {
+      line {
+        stroke-opacity: .75;
+      }
+    }
+
+    .nv-axisMaxMin {
+      text {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .x {
+    .nv-axis {
+      .nv-axisMaxMin {
+        text {
+          text-anchor: middle;
+        }
+      }
+    }
+  }
+
+  .x2 {
+    .nv-axis {
+      .nv-axisMaxMin {
+        text {
+          text-anchor: middle;
+        }
+      }
+    }
+  }
+
+  .x3 {
+    .nv-axis {
+      .nv-axisMaxMin {
+        text {
+          text-anchor: middle;
+        }
+      }
+    }
+  }
+
+  .nv-bars {
+    .negative {
+      rect {
+        zfill: brown;
+      }
+    }
+
+    rect {
+      zfill: steelblue;
+      fill-opacity: .75;
+              transition: fill-opacity 250ms linear;
+         -moz-transition: fill-opacity 250ms linear;
+      -webkit-transition: fill-opacity 250ms linear;
+
+      &.hover {
+        fill-opacity: 1;
+      }
+    }
+
+    .hover {
+      rect {
+        fill: lightblue;
+      }
+
+      text {
+        fill: black;
+      }
+    }
+
+    text {
+      fill: rgba(0, 0, 0, 0);
+    }
+  }
+
+  .nv-multibar {
+    .nv-groups {
+      rect {
+        stroke-opacity: 0;
+                transition: fill-opacity 250ms linear;
+           -moz-transition: fill-opacity 250ms linear;
+        -webkit-transition: fill-opacity 250ms linear;
+
+        &:hover {
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+
+  .nv-multibarHorizontal {
+    .nv-groups {
+      rect {
+        stroke-opacity: 0;
+                transition: fill-opacity 250ms linear;
+           -moz-transition: fill-opacity 250ms linear;
+        -webkit-transition: fill-opacity 250ms linear;
+
+        &:hover {
+          fill-opacity: 1;
+        }
+      }
+
+      text {
+        fill: black;
+        font-weight: bold;
+        stroke: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  .nv-discretebar {
+    .nv-groups {
+      rect {
+        stroke-opacity: 0;
+                transition: fill-opacity 250ms linear;
+           -moz-transition: fill-opacity 250ms linear;
+        -webkit-transition: fill-opacity 250ms linear;
+
+        &:hover {
+          fill-opacity: 1;
+        }
+      }
+
+      text {
+        fill: black;
+        font-weight: bold;
+        stroke: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  &.nv-pie {
+    path {
+         -moz-transition: fill-opacity 250ms linear,
+                             stroke-width 250ms linear,
+                             stroke-opacity 250ms linear;
+      -webkit-transition: fill-opacity 250ms linear,
+                                stroke-width 250ms linear,
+                                stroke-opacity 250ms linear;
+      stroke: $white_fff;
+      stroke-opacity: 1;
+      stroke-width: 1px;
+              transition: fill-opacity 250ms linear,
+                        stroke-width 250ms linear,
+                        stroke-opacity 250ms linear;
+    }
+
+    .nv-pie-title {
+      fill: rgba(19, 196, 249, .59);
+      font-size: 24px;
+    }
+
+    .nv-slice {
+      text {
+        stroke: $black_000;
+        stroke-width: 0;
+      }
+    }
+
+    .hover {
+      path {
+        fill-opacity: .7;
+      }
+    }
+
+    .nv-label {
+      pointer-events: none;
+
+      rect {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+      }
+    }
+  }
+
+  .nv-groups {
+    path {
+      &.nv-line {
+        fill: none;
+        stroke-width: 1.5px;
+
+        &.nv-thin-line {
+          stroke-width: 1px;
+        }
+      }
+
+      &.nv-area {
+        stroke: none;
+      }
+    }
+
+    .nv-point {
+      &.hover {
+        fill-opacity: .95 !important;
+        stroke-opacity: .5;
+        stroke-width: 20px;
+      }
+    }
+  }
+
+  .nv-line {
+    &.hover {
+      path {
+        stroke-width: 6px;
+      }
+    }
+  }
+
+  &.nv-line {
+    .nvd3 {
+      &.nv-scatter {
+        .nv-groups {
+          .nv-point {
+            fill-opacity: 0;
+            stroke-opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.nv-scatter {
+    &.nv-single-point {
+      .nv-groups {
+        .nv-point {
+          fill-opacity: .5 !important;
+          stroke-opacity: .5 !important;
+        }
+      }
+    }
+
+    .nv-groups {
+      .nv-point {
+        &.hover {
+          fill-opacity: .95 !important;
+          stroke-opacity: .95 !important;
+          stroke-width: 7px;
+        }
+      }
+    }
+  }
+
+  .nv-point-paths {
+    path {
+      fill: $whitesmoke_eee;
+      fill-opacity: 0;
+      stroke: $darkgray_aaa;
+      stroke-opacity: 0;
+    }
+  }
+
+  .nv-indexLine {
+    cursor: ew-resize;
+  }
+
+  .nv-distribution {
+    pointer-events: none;
+  }
+
+  .nv-scatter {
+    .nv-point {
+      &.hover {
+        fill-opacity: 1;
+      }
+    }
+  }
+
+  &.nv-stackedarea {
+    path {
+      &.nv-area {
+        fill-opacity: .7;
+        stroke-opacity: 0;
+                transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+           -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+        -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+
+        &.hover {
+          fill-opacity: .9;
+        }
+      }
+    }
+
+    .nv-groups {
+      .nv-point {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+      }
+    }
+  }
+
+  &.nv-linePlusBar {
+    .nv-bar {
+      rect {
+        fill-opacity: .75;
+
+        &:hover {
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.nv-bullet {
+    font: 10px sans-serif;
+
+    .nv-measure {
+      fill-opacity: .8;
+
+      &:hover {
+        fill-opacity: 1;
+      }
+    }
+
+    .nv-marker {
+      stroke: $black_000;
+      stroke-width: 2px;
+    }
+
+    .nv-markerTriangle {
+      fill: $white_fff;
+      stroke: $black_000;
+      stroke-width: 1.5px;
+    }
+
+    .nv-tick {
+      line {
+        stroke: $dimgrey_666;
+        stroke-width: .5px;
+      }
+    }
+
+    .nv-range {
+      &.nv-s0 {
+        fill: $whitesmoke_eee;
+      }
+
+      &.nv-s1 {
+        fill: $gainsboro_ddd;
+      }
+
+      &.nv-s2 {
+        fill: $lightgray_ccc;
+      }
+      fill: $silver_bababa;
+      fill-opacity: .4;
+
+      &:hover {
+        fill-opacity: .7;
+      }
+    }
+
+    .nv-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .nv-subtitle {
+      fill: $darkgrey_999;
+    }
+  }
+
+  &.nv-sparkline {
+    path {
+      fill: none;
+    }
+  }
+
+  &.nv-sparklineplus {
+    g {
+      &.nv-hoverValue {
+        pointer-events: none;
+      }
+      pointer-events: all;
+    }
+
+    .nv-hoverValue {
+      line {
+        stroke: $darkslategrey_333;
+        stroke-width: 1.5px;
+      }
+    }
+    pointer-events: all;
+
+    .nv-xValue {
+      font-size: .9em;
+      font-weight: normal;
+      stroke-width: 0;
+    }
+
+    .nv-yValue {
+      font-size: .9em;
+      font-weight: normal;
+      stroke: $salmon_f66;
+      stroke-width: 0;
+    }
+
+    .nv-maxValue {
+      fill: $forestgreen_2ca02c;
+      stroke: $forestgreen_2ca02c;
+    }
+
+    .nv-minValue {
+      fill: $crimson_d62728;
+      stroke: $crimson_d62728;
+    }
+
+    .nv-currentValue {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+
+  .nv-hoverArea {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+  }
+
+  &.nv-ohlcBar {
+    .nv-ticks {
+      .nv-tick {
+        stroke-width: 1px;
+
+        &.hover {
+          stroke-width: 2px;
+        }
+
+        &.positive {
+          stroke: $forestgreen_2ca02c;
+        }
+
+        &.negative {
+          stroke: $crimson_d62728;
+        }
+      }
+    }
+  }
+
+  &.nv-historicalStockChart {
+    .nv-axis {
+      .nv-axislabel {
+        font-weight: bold;
+      }
+    }
+
+    .nv-dragTarget {
+      cursor: move;
+      fill-opacity: 0;
+      stroke: none;
+    }
+  }
+
+  .nv-brush {
+    .extent {
+      fill-opacity: 0 !important;
+    }
+  }
+
+  .nv-brushBackground {
+    rect {
+      fill: $white_fff;
+      fill-opacity: .7;
+      stroke: $black_000;
+      stroke-width: .4;
+    }
+  }
+
+  .background {
+    path {
+      fill: none;
+      shape-rendering: crispEdges;
+      stroke: $whitesmoke_EEE;
+      stroke-opacity: .4;
+    }
+  }
+
+  .foreground {
+    path {
+      fill: none;
+      stroke-opacity: .7;
+    }
+  }
+
+  .brush {
+    .extent {
+      fill-opacity: .3;
+      shape-rendering: crispEdges;
+      stroke: $white_fff;
+    }
+  }
+
+  .axis {
+    line {
+      fill: none;
+      shape-rendering: crispEdges;
+      stroke: $black_000;
+    }
+
+    text {
+      text-shadow: 0 1px 0 $white_fff;
+    }
+  }
+
+  .nv-interactiveGuideLine {
+    pointer-events: none;
+  }
+
+  line {
+    &.nv-guideline {
+      stroke: $lightgray_ccc;
+    }
+  }
+}
+
+.nv-brush {
+  .extent {
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+  }
+
+  .resize {
+    path {
+      fill: $whitesmoke_eee;
+      stroke: $dimgrey_666;
+    }
+  }
+}
+
+.axis {
+  opacity: 1;
+
+  &.nv-disabled {
+    opacity: 0;
+  }
+
+  path {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: $black_000;
+  }
+}
